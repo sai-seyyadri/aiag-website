@@ -13,38 +13,93 @@ body {
 
 /* Header Styling */
 header {
-    background-color: rgba(30, 58, 138, 0.9); /* Better blue shade */
+    background: linear-gradient(90deg, #4b6cb7, #182848); /* Sleek gradient */
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 8px 15px; /* Compact padding for reduced height */
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-radius: 25px; /* Larger border-radius for curvier edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly more shadow for depth */
+    max-width: 90%; /* Maintain centered layout */
+    margin: 10px auto; /* Centered with some margin */
+    height: 50px; /* Set a compact height */
 }
 
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap between logo and text */
+}
+
+.logo {
+    width: 30px; /* Smaller logo */
+    height: 30px;
+    border-radius: 15px; /* Rounded edges for the logo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle depth */
+}
+
+/* Navigation Links */
 header nav ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    gap: 15px; /* Reduced space between nav items */
 }
 
 header nav ul li {
-    display: inline;
-    margin-right: 20px;
+    position: relative; /* Needed for underline effect */
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: bold; /* Bold font */
+    font-size: 1.2em; /* Larger font size */
+    padding: 5px 10px; /* Slightly increased padding for balance */
+    transition: all 0.3s ease-in-out;
 }
 
 header nav ul li a:hover {
-    color: #ffd700;
+    color: #ffd700; /* Gold text on hover */
 }
+
+
+/* Gold Underline Effect */
+header nav ul li::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Adjusted position of underline */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffd700; /* Gold underline */
+    transition: width 0.3s ease-in-out;
+}
+
+header nav ul li:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+/* Mobile Responsive Navigation */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header {
+        padding: 5px 10px; /* Smaller padding for mobile */
+        height: auto; /* Allow flexibility for mobile devices */
+    }
+}
+
 
 .logo-container {
     display: flex;
